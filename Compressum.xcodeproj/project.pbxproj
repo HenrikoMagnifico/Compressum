@@ -1,0 +1,622 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2C35F8D82B9E7779004DDE0C /* CompressumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35F8D72B9E7779004DDE0C /* CompressumApp.swift */; };
+		2C35F8DA2B9E7779004DDE0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35F8D92B9E7779004DDE0C /* ContentView.swift */; };
+		2C35F8DC2B9E7779004DDE0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C35F8DB2B9E7779004DDE0C /* Assets.xcassets */; };
+		2C35F8E02B9E7779004DDE0C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C35F8DF2B9E7779004DDE0C /* Preview Assets.xcassets */; };
+		2C35F8EA2B9E7779004DDE0C /* CompressumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35F8E92B9E7779004DDE0C /* CompressumTests.swift */; };
+		2C35F8F42B9E7779004DDE0C /* CompressumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35F8F32B9E7779004DDE0C /* CompressumUITests.swift */; };
+		2C35F8F62B9E7779004DDE0C /* CompressumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35F8F52B9E7779004DDE0C /* CompressumUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2C35F8E62B9E7779004DDE0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C35F8CC2B9E7779004DDE0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C35F8D32B9E7779004DDE0C;
+			remoteInfo = Compressum;
+		};
+		2C35F8F02B9E7779004DDE0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C35F8CC2B9E7779004DDE0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C35F8D32B9E7779004DDE0C;
+			remoteInfo = Compressum;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2C35F8D42B9E7779004DDE0C /* Compressum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Compressum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C35F8D72B9E7779004DDE0C /* CompressumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompressumApp.swift; sourceTree = "<group>"; };
+		2C35F8D92B9E7779004DDE0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2C35F8DB2B9E7779004DDE0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C35F8DD2B9E7779004DDE0C /* Compressum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Compressum.entitlements; sourceTree = "<group>"; };
+		2C35F8DF2B9E7779004DDE0C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2C35F8E52B9E7779004DDE0C /* CompressumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompressumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C35F8E92B9E7779004DDE0C /* CompressumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompressumTests.swift; sourceTree = "<group>"; };
+		2C35F8EF2B9E7779004DDE0C /* CompressumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompressumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C35F8F32B9E7779004DDE0C /* CompressumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompressumUITests.swift; sourceTree = "<group>"; };
+		2C35F8F52B9E7779004DDE0C /* CompressumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompressumUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2C35F8D12B9E7779004DDE0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C35F8E22B9E7779004DDE0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C35F8EC2B9E7779004DDE0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2C35F8CB2B9E7779004DDE0C = {
+			isa = PBXGroup;
+			children = (
+				2C35F8D62B9E7779004DDE0C /* Compressum */,
+				2C35F8E82B9E7779004DDE0C /* CompressumTests */,
+				2C35F8F22B9E7779004DDE0C /* CompressumUITests */,
+				2C35F8D52B9E7779004DDE0C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2C35F8D52B9E7779004DDE0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C35F8D42B9E7779004DDE0C /* Compressum.app */,
+				2C35F8E52B9E7779004DDE0C /* CompressumTests.xctest */,
+				2C35F8EF2B9E7779004DDE0C /* CompressumUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2C35F8D62B9E7779004DDE0C /* Compressum */ = {
+			isa = PBXGroup;
+			children = (
+				2C35F8D72B9E7779004DDE0C /* CompressumApp.swift */,
+				2C35F8D92B9E7779004DDE0C /* ContentView.swift */,
+				2C35F8DB2B9E7779004DDE0C /* Assets.xcassets */,
+				2C35F8DD2B9E7779004DDE0C /* Compressum.entitlements */,
+				2C35F8DE2B9E7779004DDE0C /* Preview Content */,
+			);
+			path = Compressum;
+			sourceTree = "<group>";
+		};
+		2C35F8DE2B9E7779004DDE0C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2C35F8DF2B9E7779004DDE0C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2C35F8E82B9E7779004DDE0C /* CompressumTests */ = {
+			isa = PBXGroup;
+			children = (
+				2C35F8E92B9E7779004DDE0C /* CompressumTests.swift */,
+			);
+			path = CompressumTests;
+			sourceTree = "<group>";
+		};
+		2C35F8F22B9E7779004DDE0C /* CompressumUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2C35F8F32B9E7779004DDE0C /* CompressumUITests.swift */,
+				2C35F8F52B9E7779004DDE0C /* CompressumUITestsLaunchTests.swift */,
+			);
+			path = CompressumUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2C35F8D32B9E7779004DDE0C /* Compressum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C35F8F92B9E7779004DDE0C /* Build configuration list for PBXNativeTarget "Compressum" */;
+			buildPhases = (
+				2C35F8D02B9E7779004DDE0C /* Sources */,
+				2C35F8D12B9E7779004DDE0C /* Frameworks */,
+				2C35F8D22B9E7779004DDE0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Compressum;
+			productName = Compressum;
+			productReference = 2C35F8D42B9E7779004DDE0C /* Compressum.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2C35F8E42B9E7779004DDE0C /* CompressumTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C35F8FC2B9E7779004DDE0C /* Build configuration list for PBXNativeTarget "CompressumTests" */;
+			buildPhases = (
+				2C35F8E12B9E7779004DDE0C /* Sources */,
+				2C35F8E22B9E7779004DDE0C /* Frameworks */,
+				2C35F8E32B9E7779004DDE0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C35F8E72B9E7779004DDE0C /* PBXTargetDependency */,
+			);
+			name = CompressumTests;
+			productName = CompressumTests;
+			productReference = 2C35F8E52B9E7779004DDE0C /* CompressumTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2C35F8EE2B9E7779004DDE0C /* CompressumUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C35F8FF2B9E7779004DDE0C /* Build configuration list for PBXNativeTarget "CompressumUITests" */;
+			buildPhases = (
+				2C35F8EB2B9E7779004DDE0C /* Sources */,
+				2C35F8EC2B9E7779004DDE0C /* Frameworks */,
+				2C35F8ED2B9E7779004DDE0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2C35F8F12B9E7779004DDE0C /* PBXTargetDependency */,
+			);
+			name = CompressumUITests;
+			productName = CompressumUITests;
+			productReference = 2C35F8EF2B9E7779004DDE0C /* CompressumUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2C35F8CC2B9E7779004DDE0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					2C35F8D32B9E7779004DDE0C = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					2C35F8E42B9E7779004DDE0C = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 2C35F8D32B9E7779004DDE0C;
+					};
+					2C35F8EE2B9E7779004DDE0C = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 2C35F8D32B9E7779004DDE0C;
+					};
+				};
+			};
+			buildConfigurationList = 2C35F8CF2B9E7779004DDE0C /* Build configuration list for PBXProject "Compressum" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2C35F8CB2B9E7779004DDE0C;
+			productRefGroup = 2C35F8D52B9E7779004DDE0C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2C35F8D32B9E7779004DDE0C /* Compressum */,
+				2C35F8E42B9E7779004DDE0C /* CompressumTests */,
+				2C35F8EE2B9E7779004DDE0C /* CompressumUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C35F8D22B9E7779004DDE0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C35F8E02B9E7779004DDE0C /* Preview Assets.xcassets in Resources */,
+				2C35F8DC2B9E7779004DDE0C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C35F8E32B9E7779004DDE0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C35F8ED2B9E7779004DDE0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2C35F8D02B9E7779004DDE0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C35F8DA2B9E7779004DDE0C /* ContentView.swift in Sources */,
+				2C35F8D82B9E7779004DDE0C /* CompressumApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C35F8E12B9E7779004DDE0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C35F8EA2B9E7779004DDE0C /* CompressumTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C35F8EB2B9E7779004DDE0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C35F8F62B9E7779004DDE0C /* CompressumUITestsLaunchTests.swift in Sources */,
+				2C35F8F42B9E7779004DDE0C /* CompressumUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C35F8E72B9E7779004DDE0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C35F8D32B9E7779004DDE0C /* Compressum */;
+			targetProxy = 2C35F8E62B9E7779004DDE0C /* PBXContainerItemProxy */;
+		};
+		2C35F8F12B9E7779004DDE0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C35F8D32B9E7779004DDE0C /* Compressum */;
+			targetProxy = 2C35F8F02B9E7779004DDE0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2C35F8F72B9E7779004DDE0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2C35F8F82B9E7779004DDE0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		2C35F8FA2B9E7779004DDE0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Compressum/Compressum.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Compressum/Preview Content\"";
+				DEVELOPMENT_TEAM = W9KD4CQC49;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = henriko.Compressum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C35F8FB2B9E7779004DDE0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Compressum/Compressum.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Compressum/Preview Content\"";
+				DEVELOPMENT_TEAM = W9KD4CQC49;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = henriko.Compressum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2C35F8FD2B9E7779004DDE0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W9KD4CQC49;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = henriko.CompressumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Compressum.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Compressum";
+			};
+			name = Debug;
+		};
+		2C35F8FE2B9E7779004DDE0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W9KD4CQC49;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = henriko.CompressumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Compressum.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Compressum";
+			};
+			name = Release;
+		};
+		2C35F9002B9E7779004DDE0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W9KD4CQC49;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = henriko.CompressumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Compressum;
+			};
+			name = Debug;
+		};
+		2C35F9012B9E7779004DDE0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W9KD4CQC49;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = henriko.CompressumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Compressum;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2C35F8CF2B9E7779004DDE0C /* Build configuration list for PBXProject "Compressum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C35F8F72B9E7779004DDE0C /* Debug */,
+				2C35F8F82B9E7779004DDE0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C35F8F92B9E7779004DDE0C /* Build configuration list for PBXNativeTarget "Compressum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C35F8FA2B9E7779004DDE0C /* Debug */,
+				2C35F8FB2B9E7779004DDE0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C35F8FC2B9E7779004DDE0C /* Build configuration list for PBXNativeTarget "CompressumTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C35F8FD2B9E7779004DDE0C /* Debug */,
+				2C35F8FE2B9E7779004DDE0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C35F8FF2B9E7779004DDE0C /* Build configuration list for PBXNativeTarget "CompressumUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C35F9002B9E7779004DDE0C /* Debug */,
+				2C35F9012B9E7779004DDE0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2C35F8CC2B9E7779004DDE0C /* Project object */;
+}
