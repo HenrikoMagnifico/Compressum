@@ -28,32 +28,32 @@ struct ContentView: View {
 
             VStack {
                 HStack {
-                    Button("Select Input Video") {
+                    Button(LocalizedStringKey("select_input_file")) {
                         withAnimation {
                             inputFilePath = selectFile()
                         }
                     }
                     .padding()
 
-                    TextField("Input File Path", text: $inputFilePath)
+                    TextField(LocalizedStringKey("input_file_path"), text: $inputFilePath)
                         .textFieldStyle(RoundedBorderTextFieldStyle()) // Add rounded border style for text field
                         .padding()
                 }
 
                 HStack {
-                    Button("Select Output Directory") {
+                    Button(LocalizedStringKey("select_output_directory")) {
                         withAnimation {
                             outputDirectoryPath = selectDirectory()
                         }
                     }
                     .padding()
 
-                    TextField("Output Directory Path", text: $outputDirectoryPath)
+                    TextField(LocalizedStringKey("output_file_path"), text: $outputDirectoryPath)
                         .textFieldStyle(RoundedBorderTextFieldStyle()) // Add rounded border style for text field
                         .padding()
                 }
 
-                Picker(selection: $selectedFormatIndex, label: Text("Export Format")) {
+                Picker(selection: $selectedFormatIndex, label: Text(LocalizedStringKey("export_format"))) {
                     ForEach(Array(0 ..< exportFormats.count), id: \.self) { index in
                         Text(self.exportFormats[index])
                     }
@@ -62,7 +62,7 @@ struct ContentView: View {
                 .padding()
 
                 Toggle(isOn: $isFastCompressionEnabled, label: {
-                    Text("Fast Compression")
+                    Text(LocalizedStringKey("fast_compression"))
                 })
                 .padding()
 
@@ -73,7 +73,7 @@ struct ContentView: View {
                         ProgressView(value: compressionProgress, total: 1.0) // Show progress bar during compression
                             .padding()
                     } else {
-                        Text("Compress Video")
+                        Text(LocalizedStringKey("compress_video"))
                             .padding()
                     }
                 }

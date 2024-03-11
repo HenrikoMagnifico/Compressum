@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1AA2DC2B9F94C100E4AC61 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C1AA2DA2B9F94C100E4AC61 /* Localizable.strings */; };
+		2C1AA2E12B9F9C4500E4AC61 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C1AA2DF2B9F9C4500E4AC61 /* Localizable.strings */; };
 		2C35F8D82B9E7779004DDE0C /* CompressumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35F8D72B9E7779004DDE0C /* CompressumApp.swift */; };
 		2C35F8DA2B9E7779004DDE0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35F8D92B9E7779004DDE0C /* ContentView.swift */; };
 		2C35F8DC2B9E7779004DDE0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C35F8DB2B9E7779004DDE0C /* Assets.xcassets */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C1AA2DB2B9F94C100E4AC61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2C1AA2E02B9F9C4500E4AC61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2C1AA2E22B9F9D5C00E4AC61 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2C1AA2E32B9F9D5C00E4AC61 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2C35F8D42B9E7779004DDE0C /* Compressum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Compressum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C35F8D72B9E7779004DDE0C /* CompressumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompressumApp.swift; sourceTree = "<group>"; };
 		2C35F8D92B9E7779004DDE0C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,9 +83,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C1AA2D92B9F93B400E4AC61 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2C1AA2DE2B9F9C2800E4AC61 /* sv.lproj */,
+				2C1AA2DD2B9F966B00E4AC61 /* en.lproj */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2C1AA2DD2B9F966B00E4AC61 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				2C1AA2DA2B9F94C100E4AC61 /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		2C1AA2DE2B9F9C2800E4AC61 /* sv.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				2C1AA2DF2B9F9C4500E4AC61 /* Localizable.strings */,
+			);
+			path = sv.lproj;
+			sourceTree = "<group>";
+		};
 		2C35F8CB2B9E7779004DDE0C = {
 			isa = PBXGroup;
 			children = (
+				2C1AA2D92B9F93B400E4AC61 /* Resources */,
 				2C35F8D62B9E7779004DDE0C /* Compressum */,
 				2C35F8E82B9E7779004DDE0C /* CompressumTests */,
 				2C35F8F22B9E7779004DDE0C /* CompressumUITests */,
@@ -226,6 +258,14 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
+				ja,
+				de,
+				es,
+				"pt-BR",
+				ru,
+				"zh-Hans",
+				sv,
 			);
 			mainGroup = 2C35F8CB2B9E7779004DDE0C;
 			productRefGroup = 2C35F8D52B9E7779004DDE0C /* Products */;
@@ -244,7 +284,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1AA2E12B9F9C4500E4AC61 /* Localizable.strings in Resources */,
 				2C35F8E02B9E7779004DDE0C /* Preview Assets.xcassets in Resources */,
+				2C1AA2DC2B9F94C100E4AC61 /* Localizable.strings in Resources */,
 				2C35F9032B9E786D004DDE0C /* ffmpeg in Resources */,
 				2C35F8DC2B9E7779004DDE0C /* Assets.xcassets in Resources */,
 			);
@@ -309,6 +351,27 @@
 			targetProxy = 2C35F8F02B9E7779004DDE0C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2C1AA2DA2B9F94C100E4AC61 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C1AA2DB2B9F94C100E4AC61 /* en */,
+				2C1AA2E32B9F9D5C00E4AC61 /* sv */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		2C1AA2DF2B9F9C4500E4AC61 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C1AA2E02B9F9C4500E4AC61 /* en */,
+				2C1AA2E22B9F9D5C00E4AC61 /* sv */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2C35F8F72B9E7779004DDE0C /* Debug */ = {
