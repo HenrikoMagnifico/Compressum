@@ -53,13 +53,13 @@ struct ContentView: View {
             .padding()
 
             Button("Compress") {
-                compressVideo()
+                compressFile()
             }
             .padding()
         }
         .padding()
         .background(Color.gray.opacity(0.1)) // Add background color to the stack
-        .onDrop(of: [.fileURL], delegate: FileDropDelegate(droppedFileURL: $droppedFileURL))
+        .onDrop(of: [.fileURL], delegate: FileDropDelegate(droppedFileURL: $droppedFileURL, outputDirectoryPath: $outputDirectoryPath))
         .onChange(of: droppedFileURL) { newValue in
             if let droppedURL = newValue {
                 inputFilePath = droppedURL.path
@@ -100,17 +100,35 @@ struct ContentView: View {
         return ""
     }
 
-    func compressVideo() {
-        guard !inputFilePath.isEmpty && !outputDirectoryPath.isEmpty else {
-            print("Input file path and output directory path must be specified.")
+    func compressFile() {
+        print("Input file path:", inputFilePath)
+        print("Dropped file URL:", droppedFileURL?.path ?? "None")
+        print("Output directory path:", outputDirectoryPath)
+        
+        guard !inputFilePath.isEmpty else {
+            print("Input file path must be specified.")
             return
         }
 
         let selectedFormat = exportFormats[selectedFormatIndex].lowercased()
         let selectedSpeed = isFastCompressionEnabled ? "veryfast" : "veryslow" // Use veryfast if fast compression is enabled, otherwise veryslow
         let ffmpegPath = Bundle.main.path(forResource: "ffmpeg", ofType: nil) ?? "/usr/local/bin/ffmpeg"
-        let outputFilePath = "\(outputDirectoryPath)/output.\(selectedFormat)"
-        let command = "\(ffmpegPath) -i \"\(inputFilePath)\" -preset \(selectedSpeed) \"\(outputFilePath)\""
+        
+        let inputURL = droppedFileURL != nil ? droppedFileURL! : URL(fileURLWithPath: inputFilePath)
+        let inputDirectoryURL = inputURL.deletingLastPathComponent()
+        
+        var outputDirectoryURL = inputDirectoryURL
+        if !outputDirectoryPath.isEmpty {
+            outputDirectoryURL = URL(fileURLWithPath: outputDirectoryPath)
+        }
+        print("Output directory path (before constructing output file path):", outputDirectoryURL.path)
+        
+        let inputFileName = inputURL.lastPathComponent
+        let outputFileName = (inputFileName as NSString).deletingPathExtension + "_compressed." + selectedFormat
+        let outputFilePath = outputDirectoryURL.appendingPathComponent(outputFileName).path
+        print("Output file path:", outputFilePath)
+        
+        let command = "\(ffmpegPath) -i \"\(inputURL.path)\" -preset \(selectedSpeed) \"\(outputFilePath)\""
         executeCommand(command)
     }
 
@@ -142,6 +160,7 @@ struct ContentView: View {
 
 struct FileDropDelegate: DropDelegate {
     @Binding var droppedFileURL: URL?
+    @Binding var outputDirectoryPath: String
 
     func performDrop(info: DropInfo) -> Bool {
         guard let item = info.itemProviders(for: [.fileURL]).first else { return false }
@@ -149,6 +168,7 @@ struct FileDropDelegate: DropDelegate {
             if let data = data, let url = URL(dataRepresentation: data, relativeTo: nil) {
                 DispatchQueue.main.async {
                     self.droppedFileURL = url
+                    self.outputDirectoryPath = url.deletingLastPathComponent().path
                 }
             } else {
                 print("Failed to load URL:", error?.localizedDescription ?? "Unknown error")
