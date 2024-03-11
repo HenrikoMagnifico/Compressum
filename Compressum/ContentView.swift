@@ -15,55 +15,70 @@ struct ContentView: View {
     @State private var selectedFormatIndex = 0
     @State private var isFastCompressionEnabled = false
     @State private var droppedFileURL: URL?
+    @State private var isCompressing = false // Track compression state
+    @State private var compressionProgress: Double = 0.0 // Track compression progress
 
     let exportFormats = ["MP4", "MOV", "AVI", "MKV", "FLV", "WEBM", "MPEG", "WMV"] // Add more export formats if needed
 
     var body: some View {
-
-            VStack {
-                HStack {
-                    Button("Select Input File") {
+        VStack {
+            HStack {
+                Button("Select Input Video") {
+                    withAnimation {
                         inputFilePath = selectFile()
                     }
-                    .padding()
-
-                    TextField("Input File Path", text: $inputFilePath)
-                        .padding()
                 }
+                .padding()
 
-                HStack {
-                    Button("Select Output Directory") {
+                TextField("Input File Path", text: $inputFilePath)
+                    .padding()
+            }
+
+            HStack {
+                Button("Select Output Directory") {
+                    withAnimation {
                         outputDirectoryPath = selectDirectory()
                     }
-                    .padding()
+                }
+                .padding()
 
-                    TextField("Output Directory Path", text: $outputDirectoryPath)
+                TextField("Output Directory Path", text: $outputDirectoryPath)
+                    .padding()
+            }
+
+            Picker(selection: $selectedFormatIndex, label: Text("Export Format")) {
+                ForEach(Array(0 ..< exportFormats.count), id: \.self) { index in
+                    Text(self.exportFormats[index])
+                }
+            }
+            .padding()
+
+            Toggle(isOn: $isFastCompressionEnabled, label: {
+                Text("Fast Compression")
+            })
+            .padding()
+
+            Button(action: {
+                compressFile()
+            }) {
+                if isCompressing {
+                    ProgressView(value: compressionProgress, total: 1.0) // Show progress bar during compression
+                        .padding()
+                } else {
+                    Text("Compress Video")
                         .padding()
                 }
-
-                Picker(selection: $selectedFormatIndex, label: Text("Export Format")) {
-                    ForEach(Array(0 ..< exportFormats.count), id: \.self) { index in
-                        Text(self.exportFormats[index])
-                    }
-                }
-                .padding()
-
-                Toggle(isOn: $isFastCompressionEnabled, label: {
-                    Text("Fast Compression")
-                })
-                .padding()
-
-                Button("Compress") {
-                    compressFile()
-                }
-                .padding()
             }
+            .disabled(isCompressing) // Disable button during compression
+        }
         .padding()
         .background(Color.clear) // Set background to clear
         .onDrop(of: [.fileURL], delegate: FileDropDelegate(droppedFileURL: $droppedFileURL, outputDirectoryPath: $outputDirectoryPath))
         .onChange(of: droppedFileURL) { newValue in
             if let droppedURL = newValue {
-                inputFilePath = droppedURL.path
+                withAnimation {
+                    inputFilePath = droppedURL.path
+                }
             }
         }
     }
@@ -129,9 +144,55 @@ struct ContentView: View {
         let outputFilePath = outputDirectoryURL.appendingPathComponent(outputFileName).path
         print("Output file path:", outputFilePath)
         
+        // Construct the ffmpeg command with progress and nostats options
         let command = "\(ffmpegPath) -i \"\(inputURL.path)\" -preset \(selectedSpeed) \"\(outputFilePath)\""
-        executeCommand(command)
+
+        let task = Process()
+        task.launchPath = "/bin/bash"
+        task.arguments = ["-c", command]
+
+        let pipe = Pipe()
+        task.standardOutput = pipe
+        task.standardError = pipe
+
+        let outputHandle = pipe.fileHandleForReading
+
+        outputHandle.readabilityHandler = { pipe in
+            if let line = String(data: pipe.availableData, encoding: .utf8) {
+                DispatchQueue.main.async {
+                    // Parse the output to extract progress information
+                    if line.contains("Duration:") {
+                        // Extract the duration from the line
+                        if let durationRange = line.range(of: "Duration: (\\d{2}):(\\d{2}):(\\d{2})\\.(\\d+)") {
+                            let durationString = line[durationRange]
+                            // Convert duration to seconds or use it as needed
+                            print("Duration:", durationString)
+                        }
+                    } else if line.contains("time=") {
+                        // Extract the progress from the line
+                        if let progressRange = line.range(of: "time=(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d+)") {
+                            let progressString = line[progressRange]
+                            // Convert progress to seconds or use it as needed
+                            print("Progress:", progressString)
+                        }
+                    } else {
+                        // Handle other output as needed
+                        print("Other Output:", line)
+                    }
+                }
+            }
+        }
+
+        task.launch()
+        task.waitUntilExit()
+
+        if task.terminationStatus == 0 {
+            print("Compression successful")
+        } else {
+            print("Compression failed")
+        }
     }
+
 
     func executeCommand(_ command: String) {
         let task = Process()
@@ -142,13 +203,35 @@ struct ContentView: View {
         task.standardOutput = pipe
         task.standardError = pipe
 
-        task.launch()
+        let outputHandle = pipe.fileHandleForReading
 
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        if let output = String(data: data, encoding: .utf8) {
-            print(output)
+        outputHandle.readabilityHandler = { pipe in
+            if let line = String(data: pipe.availableData, encoding: .utf8) {
+                DispatchQueue.main.async {
+                    // Parse the output to extract progress information
+                    if line.contains("Duration:") {
+                        // Extract the duration from the line
+                        if let durationRange = line.range(of: "Duration: (\\d{2}):(\\d{2}):(\\d{2})\\.(\\d+)") {
+                            let durationString = line[durationRange]
+                            // Convert duration to seconds or use it as needed
+                            print("Duration:", durationString)
+                        }
+                    } else if line.contains("time=") {
+                        // Extract the progress from the line
+                        if let progressRange = line.range(of: "time=(\\d{2}):(\\d{2}):(\\d{2})\\.(\\d+)") {
+                            let progressString = line[progressRange]
+                            // Convert progress to seconds or use it as needed
+                            print("Progress:", progressString)
+                        }
+                    } else {
+                        // Handle other output as needed
+                        print("Other Output:", line)
+                    }
+                }
+            }
         }
 
+        task.launch()
         task.waitUntilExit()
 
         if task.terminationStatus == 0 {
@@ -157,6 +240,7 @@ struct ContentView: View {
             print("Compression failed")
         }
     }
+
 }
 
 struct FileDropDelegate: DropDelegate {
