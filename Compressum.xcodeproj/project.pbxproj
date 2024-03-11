@@ -14,6 +14,9 @@
 		2C35F8EA2B9E7779004DDE0C /* CompressumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35F8E92B9E7779004DDE0C /* CompressumTests.swift */; };
 		2C35F8F42B9E7779004DDE0C /* CompressumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35F8F32B9E7779004DDE0C /* CompressumUITests.swift */; };
 		2C35F8F62B9E7779004DDE0C /* CompressumUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C35F8F52B9E7779004DDE0C /* CompressumUITestsLaunchTests.swift */; };
+		2C35F9032B9E786D004DDE0C /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2C35F9022B9E786D004DDE0C /* ffmpeg */; settings = {ASSET_TAGS = (ffmpeg, ); }; };
+		2C35F9042B9E786D004DDE0C /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2C35F9022B9E786D004DDE0C /* ffmpeg */; settings = {ASSET_TAGS = (ffmpeg, ); }; };
+		2C35F9052B9E786D004DDE0C /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2C35F9022B9E786D004DDE0C /* ffmpeg */; settings = {ASSET_TAGS = (ffmpeg, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,8 @@
 		2C35F8EF2B9E7779004DDE0C /* CompressumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompressumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C35F8F32B9E7779004DDE0C /* CompressumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompressumUITests.swift; sourceTree = "<group>"; };
 		2C35F8F52B9E7779004DDE0C /* CompressumUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompressumUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2C35F9022B9E786D004DDE0C /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = ffmpeg; path = ../../../ffmpeg; sourceTree = "<group>"; };
+		2C5E46452B9F441900F38935 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +100,7 @@
 		2C35F8D62B9E7779004DDE0C /* Compressum */ = {
 			isa = PBXGroup;
 			children = (
+				2C5E46452B9F441900F38935 /* Info.plist */,
 				2C35F8D72B9E7779004DDE0C /* CompressumApp.swift */,
 				2C35F8D92B9E7779004DDE0C /* ContentView.swift */,
 				2C35F8DB2B9E7779004DDE0C /* Assets.xcassets */,
@@ -125,6 +131,7 @@
 			children = (
 				2C35F8F32B9E7779004DDE0C /* CompressumUITests.swift */,
 				2C35F8F52B9E7779004DDE0C /* CompressumUITestsLaunchTests.swift */,
+				2C35F9022B9E786D004DDE0C /* ffmpeg */,
 			);
 			path = CompressumUITests;
 			sourceTree = "<group>";
@@ -192,6 +199,10 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					New,
+					ffmpeg,
+				);
 				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
@@ -234,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C35F8E02B9E7779004DDE0C /* Preview Assets.xcassets in Resources */,
+				2C35F9032B9E786D004DDE0C /* ffmpeg in Resources */,
 				2C35F8DC2B9E7779004DDE0C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C35F9042B9E786D004DDE0C /* ffmpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C35F9052B9E786D004DDE0C /* ffmpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +438,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Compressum/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -462,6 +478,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Compressum/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
