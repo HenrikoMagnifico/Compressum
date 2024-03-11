@@ -31,3 +31,15 @@ struct BackgroundView: NSViewRepresentable {
         // Update view if needed
     }
 }
+
+struct BlurView: NSViewRepresentable {
+    let material: NSVisualEffectView.Material
+    
+    func makeNSView(context: Context) -> NSVisualEffectView {
+        let view = NSVisualEffectView()
+        view.material = material
+        return view
+    }
+    
+    func updateNSView(_ nsView: NSVisualEffectView, context: Context) {}
+}
