@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Compressum
+
+  Created by Henrik Öberg on 2024-03-11.
+  
+*/
+"select_input_file"="Выбрать входной файл";
+"select_output_directory"="Выбрать выходной каталог";
+"fast_compression"="Быстрое сжатие";
+"compress_video"="Сжать видео";
+"input_file_path"="Путь к входному файлу";
+"output_file_path"="Путь к выходному файлу";
+"export_format"="Формат экспорта";
