@@ -19,64 +19,47 @@ struct ContentView: View {
     let exportFormats = ["MP4", "MOV", "AVI", "MKV", "FLV", "WEBM", "MPEG", "WMV"] // Add more export formats if needed
 
     var body: some View {
-        VStack {
-            HStack {
-                Button(action: {
-                    inputFilePath = selectFile()
-                }) {
-                    Text("Select Input File")
+
+            VStack {
+                HStack {
+                    Button("Select Input File") {
+                        inputFilePath = selectFile()
+                    }
+                    .padding()
+
+                    TextField("Input File Path", text: $inputFilePath)
                         .padding()
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .shadow(radius: 5)
                 }
 
-                TextField("Input File Path", text: $inputFilePath)
+                HStack {
+                    Button("Select Output Directory") {
+                        outputDirectoryPath = selectDirectory()
+                    }
                     .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-            }
 
-            HStack {
-                Button(action: {
-                    outputDirectoryPath = selectDirectory()
-                }) {
-                    Text("Select Output Directory")
+                    TextField("Output Directory Path", text: $outputDirectoryPath)
                         .padding()
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                        .shadow(radius: 5)
                 }
 
-                TextField("Output Directory Path", text: $outputDirectoryPath)
-                    .padding()
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-            }
-
-            Picker(selection: $selectedFormatIndex, label: Text("Export Format")) {
-                ForEach(Array(0 ..< exportFormats.count), id: \.self) { index in
-                    Text(self.exportFormats[index])
+                Picker(selection: $selectedFormatIndex, label: Text("Export Format")) {
+                    ForEach(Array(0 ..< exportFormats.count), id: \.self) { index in
+                        Text(self.exportFormats[index])
+                    }
                 }
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding()
+                .padding()
 
-            Toggle(isOn: $isFastCompressionEnabled, label: {
-                Text("Fast Compression")
-            })
-            .padding()
+                Toggle(isOn: $isFastCompressionEnabled, label: {
+                    Text("Fast Compression")
+                })
+                .padding()
 
-            Button(action: {
-                compressFile()
-            }) {
-                Text("Compress")
-                    .padding()
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .shadow(radius: 5)
+                Button("Compress") {
+                    compressFile()
+                }
+                .padding()
             }
-        }
         .padding()
-        .background(Color.gray.opacity(0.1)) // Add background color to the stack
+        .background(Color.clear) // Set background to clear
         .onDrop(of: [.fileURL], delegate: FileDropDelegate(droppedFileURL: $droppedFileURL, outputDirectoryPath: $outputDirectoryPath))
         .onChange(of: droppedFileURL) { newValue in
             if let droppedURL = newValue {
