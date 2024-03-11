@@ -139,7 +139,7 @@ struct ContentView: View {
         }
 
         let selectedFormat = exportFormats[selectedFormatIndex].lowercased()
-        let selectedSpeed = isFastCompressionEnabled ? "veryfast" : "veryslow" // Use veryfast if fast compression is enabled, otherwise veryslow
+        let selectedSpeed = isFastCompressionEnabled ? "ultrafast" : "fast" // Use veryfast if fast compression is enabled, otherwise veryslow
         let ffmpegPath = Bundle.main.path(forResource: "ffmpeg", ofType: nil) ?? "/usr/local/bin/ffmpeg"
         
         let inputURL = droppedFileURL != nil ? droppedFileURL! : URL(fileURLWithPath: inputFilePath)
