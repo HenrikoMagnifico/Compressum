@@ -10,9 +10,7 @@ import AppKit
 import UniformTypeIdentifiers
 
 struct ContentView: View {
-    
     @Environment(\.colorScheme) var colorScheme
-    @State private var isDarkMode = true
     @State private var inputFilePath: String = ""
     @State private var outputDirectoryPath: String = ""
     @State private var selectedFormatIndex = 0
@@ -24,65 +22,66 @@ struct ContentView: View {
     let exportFormats = ["MP4", "MOV", "AVI", "MKV", "FLV", "WEBM", "MPEG", "WMV"] // Add more export formats if needed
 
     var body: some View {
-        VStack {
-            HStack {
-                Button("Select Input Video") {
-                    withAnimation {
-                        inputFilePath = selectFile()
+        ZStack {
+            BlurView(material: colorScheme == .dark ? .dark : .light)
+                .edgesIgnoringSafeArea(.all)
+
+            VStack {
+                HStack {
+                    Button("Select Input Video") {
+                        withAnimation {
+                            inputFilePath = selectFile()
+                        }
                     }
-                }
-                .padding()
-
-                TextField("Input File Path", text: $inputFilePath)
-                    .textFieldStyle(RoundedBorderTextFieldStyle()) // Add rounded border style for text field
                     .padding()
-            }
 
-            HStack {
-                Button("Select Output Directory") {
-                    withAnimation {
-                        outputDirectoryPath = selectDirectory()
-                    }
-                }
-                .padding()
-
-                TextField("Output Directory Path", text: $outputDirectoryPath)
-                    .textFieldStyle(RoundedBorderTextFieldStyle()) // Add rounded border style for text field
-                    .padding()
-            }
-
-            Picker(selection: $selectedFormatIndex, label: Text("Export Format")) {
-                ForEach(Array(0 ..< exportFormats.count), id: \.self) { index in
-                    Text(self.exportFormats[index])
-                }
-            }
-            .pickerStyle(SegmentedPickerStyle()) // Use segmented picker style for better appearance
-            .padding()
-
-            Toggle(isOn: $isFastCompressionEnabled, label: {
-                Text("Fast Compression")
-            })
-            .padding()
-
-            Button(action: {
-                compressFile()
-            }) {
-                if isCompressing {
-                    ProgressView(value: compressionProgress, total: 1.0) // Show progress bar during compression
-                        .padding()
-                } else {
-                    Text("Compress Video")
+                    TextField("Input File Path", text: $inputFilePath)
+                        .textFieldStyle(RoundedBorderTextFieldStyle()) // Add rounded border style for text field
                         .padding()
                 }
-            }
-            .disabled(isCompressing) // Disable button during compression
-            .buttonStyle(DefaultButtonStyle()) // Use default button style
 
-        }
-        .padding()
-        .background(BlurView(material: isDarkMode ? .dark : .light))
-        .onAppear {
-            isDarkMode = colorScheme == .dark
+                HStack {
+                    Button("Select Output Directory") {
+                        withAnimation {
+                            outputDirectoryPath = selectDirectory()
+                        }
+                    }
+                    .padding()
+
+                    TextField("Output Directory Path", text: $outputDirectoryPath)
+                        .textFieldStyle(RoundedBorderTextFieldStyle()) // Add rounded border style for text field
+                        .padding()
+                }
+
+                Picker(selection: $selectedFormatIndex, label: Text("Export Format")) {
+                    ForEach(Array(0 ..< exportFormats.count), id: \.self) { index in
+                        Text(self.exportFormats[index])
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle()) // Use segmented picker style for better appearance
+                .padding()
+
+                Toggle(isOn: $isFastCompressionEnabled, label: {
+                    Text("Fast Compression")
+                })
+                .padding()
+
+                Button(action: {
+                    compressFile()
+                }) {
+                    if isCompressing {
+                        ProgressView(value: compressionProgress, total: 1.0) // Show progress bar during compression
+                            .padding()
+                    } else {
+                        Text("Compress Video")
+                            .padding()
+                    }
+                }
+                .disabled(isCompressing) // Disable button during compression
+                .buttonStyle(DefaultButtonStyle()) // Use default button style
+
+            }
+            .padding()
         }
         .onDrop(of: [.fileURL], delegate: FileDropDelegate(droppedFileURL: $droppedFileURL, outputDirectoryPath: $outputDirectoryPath))
         .onChange(of: droppedFileURL) { newValue in
@@ -92,21 +91,13 @@ struct ContentView: View {
                 }
             }
         }
-        .preferredColorScheme(isDarkMode ? .dark : .light) // Set preferred color scheme based on toggle state
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Toggle(isOn: $isDarkMode, label: {
-                    Label("Dark Mode", systemImage: "moon.fill") // Use system image for toggle
-                })
-            }
-        }
+        .preferredColorScheme(colorScheme) // Set preferred color scheme based on system setting
         .navigationTitle("Compressum")
     }
 
-
     func selectFile() -> String {
         let dialog = NSOpenPanel()
-        dialog.title = "Choose a file"
+        dialog.title = "Choose a video file"
         dialog.showsResizeIndicator = true
         dialog.showsHiddenFiles = false
         dialog.canChooseDirectories = false

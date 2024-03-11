@@ -9,21 +9,26 @@ import SwiftUI
 
 @main
 struct CompressumApp: App {
+    @State private var isDarkMode = true
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .frame(minWidth: 500, maxWidth: .infinity, minHeight: 300, maxHeight: .infinity) // Set frame to fill entire window
-                .background(BackgroundView()) // Use custom background view
-                .handlesExternalEvents(preferring: Set(arrayLiteral: "dragAndDrop"), allowing: Set(arrayLiteral: "dragAndDrop")) // Enable drag and drop
+                .preferredColorScheme(isDarkMode ? .dark : .light)
+                .onAppear {
+                    isDarkMode = NSApp.effectiveAppearance.bestMatch(from: [.darkAqua, .aqua]) == .darkAqua
+                }
         }
     }
 }
 
 struct BackgroundView: NSViewRepresentable {
+    let material: NSVisualEffectView.Material
+    
     func makeNSView(context: Context) -> NSVisualEffectView {
         let view = NSVisualEffectView()
         view.blendingMode = .behindWindow // Set blending mode to behind window
-        view.material = .ultraDark // Use dark material for visual effect
+        view.material = material // Use dark material for visual effect
         return view
     }
 
@@ -37,6 +42,7 @@ struct BlurView: NSViewRepresentable {
     
     func makeNSView(context: Context) -> NSVisualEffectView {
         let view = NSVisualEffectView()
+        view.blendingMode = .behindWindow // Set blending mode to behind window
         view.material = material
         return view
     }
