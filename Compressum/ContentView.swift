@@ -21,23 +21,35 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HStack {
-                Button("Select Input File") {
+                Button(action: {
                     inputFilePath = selectFile()
+                }) {
+                    Text("Select Input File")
+                        .padding()
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
                 }
-                .padding()
 
                 TextField("Input File Path", text: $inputFilePath)
                     .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
             }
 
             HStack {
-                Button("Select Output Directory") {
+                Button(action: {
                     outputDirectoryPath = selectDirectory()
+                }) {
+                    Text("Select Output Directory")
+                        .padding()
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
                 }
-                .padding()
 
                 TextField("Output Directory Path", text: $outputDirectoryPath)
                     .padding()
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
             }
 
             Picker(selection: $selectedFormatIndex, label: Text("Export Format")) {
@@ -45,6 +57,7 @@ struct ContentView: View {
                     Text(self.exportFormats[index])
                 }
             }
+            .pickerStyle(SegmentedPickerStyle())
             .padding()
 
             Toggle(isOn: $isFastCompressionEnabled, label: {
@@ -52,10 +65,15 @@ struct ContentView: View {
             })
             .padding()
 
-            Button("Compress") {
+            Button(action: {
                 compressFile()
+            }) {
+                Text("Compress")
+                    .padding()
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .shadow(radius: 5)
             }
-            .padding()
         }
         .padding()
         .background(Color.gray.opacity(0.1)) // Add background color to the stack
@@ -168,7 +186,6 @@ struct FileDropDelegate: DropDelegate {
             if let data = data, let url = URL(dataRepresentation: data, relativeTo: nil) {
                 DispatchQueue.main.async {
                     self.droppedFileURL = url
-                    self.outputDirectoryPath = url.deletingLastPathComponent().path
                 }
             } else {
                 print("Failed to load URL:", error?.localizedDescription ?? "Unknown error")
