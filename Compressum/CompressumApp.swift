@@ -15,7 +15,7 @@ struct CompressumApp: App {
         WindowGroup {
             ContentView()
                 .preferredColorScheme(isDarkMode ? .dark : .light)
-                .frame(minWidth: 600, idealWidth: 600, maxWidth: .infinity, minHeight: 400, idealHeight: 600, maxHeight: .infinity)
+                .frame(minWidth: 500, idealWidth: 500, maxWidth: .infinity, minHeight: 400, idealHeight: 400, maxHeight: .infinity)
                 .onAppear {
                     isDarkMode = NSApp.effectiveAppearance.bestMatch(from: [.darkAqua, .aqua]) == .darkAqua
                 }

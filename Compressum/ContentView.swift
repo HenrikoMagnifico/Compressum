@@ -35,6 +35,7 @@ struct ContentView: View {
                     }
                     .padding()
 
+
                     TextField(LocalizedStringKey("input_file_path"), text: $inputFilePath)
                         .textFieldStyle(RoundedBorderTextFieldStyle()) // Add rounded border style for text field
                         .padding()
