@@ -29,7 +29,7 @@ struct BackgroundView: NSViewRepresentable {
     func makeNSView(context: Context) -> NSVisualEffectView {
         let view = NSVisualEffectView()
         view.blendingMode = .behindWindow // Set blending mode to behind window
-        view.material = material // Use dark material for visual effect
+        view.material = .underWindowBackground // Use dark material for visual effect
         return view
     }
 
@@ -44,9 +44,11 @@ struct BlurView: NSViewRepresentable {
     func makeNSView(context: Context) -> NSVisualEffectView {
         let view = NSVisualEffectView()
         view.blendingMode = .behindWindow // Set blending mode to behind window
-        view.material = material
+        view.material = .underWindowBackground
         return view
     }
     
     func updateNSView(_ nsView: NSVisualEffectView, context: Context) {}
 }
+
+
